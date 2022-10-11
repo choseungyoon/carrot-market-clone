@@ -11,10 +11,12 @@
   "dependencies": {
     "@prisma/client": "^4.4.0",
     "@tailwindcss/forms": "^0.5.3",
+    "iron-session": "^6.2.1",
     "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.36.1"
+    "react-hook-form": "^7.36.1",
+    "twilio": "^3.82.2"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
