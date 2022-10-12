@@ -59,7 +59,7 @@ const Enter: NextPage = () => {
     if (tokenData?.ok) {
       router.push("/");
     }
-  });
+  }, [tokenData, router]);
 
   return (
     <div className="mt-16 px-4">
