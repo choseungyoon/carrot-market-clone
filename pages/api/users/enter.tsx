@@ -1,7 +1,7 @@
 import twilio from "twilio";
 import withHandler, { ResponseType } from "@libs/server/withHandler";
 import { NextApiRequest, NextApiResponse } from "next";
-import client from "@libs/client";
+import client from "@libs/server/client";
 import { AwsInstance } from "twilio/lib/rest/accounts/v1/credential/aws";
 
 const twilioClient = twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
