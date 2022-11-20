@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import useMutation from "@libs/client/useMutation";
+import { useRouter } from "next/router";
+import { cls } from "@libs/client/utils";
 import Button from "@components/button";
 import Input from "@components/input";
-import useMutation from "@libs/client/useMutation";
-import { cls } from "@libs/client/utils";
-import { useRouter } from "next/router";
 
 interface EnterForm {
   email?: string;
@@ -39,9 +39,11 @@ const Enter: NextPage = () => {
   const onEmailClick = () => {
     reset(), setMethod("email");
   };
+
   const onPhoneClick = () => {
     reset(), setMethod("phone");
   };
+
   const onValid = (validForm: EnterForm) => {
     if (loading) return;
     enter(validForm);

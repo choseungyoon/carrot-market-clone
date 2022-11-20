@@ -11,19 +11,10 @@ async function handler(
   res: NextApiResponse<ResponseType>
 ) {
   const { phone, email } = req.body;
-  const user = phone ? { phone: phone } : email ? { email } : null;
+  const user = phone ? { phone } : email ? { email } : null;
   if (!user) return res.status(400).json({ ok: false });
+
   const payload = Math.floor(100000 + Math.random() * 900000) + "";
-
-  if (phone) {
-    const message = await twilioClient.messages.create({
-      messagingServiceSid: process.env.MESSAGE_SID,
-      to: process.env.MY_PHONE!,
-      body: `Hello!!`,
-    });
-    console.log(message);
-  }
-
   const token = await client.token.create({
     data: {
       payload,
@@ -40,7 +31,7 @@ async function handler(
       },
     },
   });
-
+  console.log(token);
   return res.json({
     ok: true,
   });
